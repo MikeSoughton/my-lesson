@@ -36,6 +36,10 @@ If I want to have code-like text in the main text body I can do this `python tak
 > I need to figure out how to include an actual link
 {: .callout}
 
+## LaTeX typesetting
+
+LaTeX can be easily used with the usual double dollar signs $$y = mx + c$$, although this will appear on the same line.
+
 ## Code presentation
 
 I will present code as follows:
