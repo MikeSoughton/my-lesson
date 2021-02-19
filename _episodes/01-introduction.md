@@ -1,105 +1,60 @@
 ---
-title: "GitHub, Markdown, and Jekyll"
+title: "Introduction"
 teaching: 10
 exercises: 0
 questions:
-- "How are pages published?"
+- "None yet"
 objectives:
-- "Explain how GitHub Pages produce web sites from Git repositories."
-- "Explain Jekyll's formatting rules."
+- "Explain what we will cover in this workshop"
 keypoints:
-- "Lessons are stored in Git repositories on GitHub."
-- "Lessons are written in Markdown."
-- "Jekyll translates the files in the gh-pages branch into HTML for viewing."
-- "The site's configuration is stored in _config.yml."
-- "Each page's configuration is stored at the top of that page."
-- "Groups of files are stored in collection directories whose names begin with an underscore."
+- "Something interesting about data science"
 ---
 
-This episode describes the tools we use to build and manage lessons.
-These simplify many tasks, but make other things more complicated.
+This is the introductory page.
 
-## Repositories on GitHub
+## The crux of learning
 
-Our lessons are stored in Git repositories (or "repos") on GitHub.
-We use the term *fork* to mean
-"a copy of a GitHub-hosted repo that is also hosted on GitHub"
-and the term *clone* to mean
-"a copy of a GitHub-hosted repo that's located on someone else's machine".
-In both cases,
-the duplicate has a reference that points to the original repo.
-
-In an ideal world,
-we would put all of the common files used by our lessons
-(such as the CSS style files and the image files with project logos)
-in a template repo.
-The master copy of each lesson would be a fork of that repo,
-and each author's working copy would be a fork of that master:
+Here I can put any infomation about what the course will cover.
 
 ![Forking Repositories]({{ page.root }}/fig/forking.svg)
 
-However, GitHub only allows a user to have one fork of any particular repo.
-This creates a problem for us because an author may be involved in writing several lessons,
-each with its own repo.
-We therefore use [GitHub Importer][github-importer] to create new lessons.
-After the lesson has been created,
-we manually add the [template repository]({{ site.template_repo }}) as a remote called `template`
-to update the lesson when the template changes.
+Maybe include some images as well...
 
 ![Repository Links]({{ page.root }}/fig/repository-links.svg)
 
 ## GitHub Pages
 
-If a repository has a branch called `gh-pages` (short for "GitHub Pages"),
-GitHub publishes its content to create a website for the repository.
-If the repository's URL is `https://github.com/USERNAME/REPOSITORY`,
-the website is `https://USERNAME.github.io/REPOSITORY`.
-
-GitHub Pages sites can include static HTML pages,
-which are published as-is,
-or they can use [Jekyll][jekyll] as described below
-to compile HTML and/or Markdown pages with embedded directives
-to create the pages for display.
-
-> ## Why Doesn't My Site Appear?
->
-> If the root directory of a repository contains a file called `.nojekyll`,
-> GitHub will *not* generate a website for that repository's `gh-pages` branch.
-{: .callout}
-
-We write lessons in Markdown because it's simple to learn
-and isn't tied to any specific language.
-(The ReStructured Text format popular in the Python world,
-for example,
-is a complete unknown to R programmers.)
-If authors want to write lessons in something else,
-such as [R Markdown][r-markdown],
-they must generate HTML or Markdown that [Jekyll][jekyll] can process
-and commit that to the repository.
-A [later episode]({{ page.root }}/04-formatting/) describes the Markdown we use.
+If I want to have code-like text in the main text body I can do this `python take-over-the-world.py`
 
 > ## Teaching Tools
 >
-> We do *not* prescribe what tools instructors should use when actually teaching:
-> the [Jupyter Notebook][jupyter],
-> [RStudio][rstudio],
-> and the good ol' command line are equally welcome up on stage.
-> All we specify is the format of the lesson notes.
+> I can outline here some tools that may be useful, such as:
+> [Jupyter Notebook][jupyter],
+> Wow somehow carpentries knows how to link to jupyter without actually specifying the link. 
+> I need to figure out how to include an actual link
 {: .callout}
 
-## Jekyll
+## Code presentation
 
-GitHub uses [Jekyll][jekyll] to turn Markdown into HTML.
-It looks for text files that begin with a header formatted like this:
+I will present code as follows:
 
 ~~~
----
-variable: value
-other_variable: other_value
----
-...stuff in the page...
+bash ./find-bsm-physics.sh
 ~~~
-{: .source}
+{: .language-bash}
+
+~~~
+python get-nobel-prize.py
+~~~
+{: .language-python}
+
+~~~
+Traceback (most recent call last):
+  File "./python_assert.py", line 5, in <module>
+    assert nobel_prize == True
+AssertionError
+~~~
+{: .output}
 
 and inserts the values of those variables into the page when formatting it.
 The three dashes that start the header *must* be the first three characters in the file:
