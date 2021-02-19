@@ -22,7 +22,7 @@ Maybe include some images as well...
 
 ![Repository Links]({{ page.root }}/fig/repository-links.svg)
 
-## GitHub Pages
+## Helpful tools
 
 If I want to have code-like text in the main text body I can do this `python take-over-the-world.py`
 
