@@ -40,6 +40,10 @@ If I want to have code-like text in the main text body I can do this `python tak
 
 LaTeX can be easily used with the usual double dollar signs $$y = mx + c$$, although this will appear on the same line.
 
+ Some common definitions are included below.
+ 
+  * **Data** $$(x_i, y_i)$$ where $$i$$ represents the $$i^{\text{th}}$$ data point. The $$x_i$$ are typically referred to as **instances** and the $$y_i$$ as **labels**. In general the $$x_i$$ and $$y_i$$ don't need to be numbers. For example, in a dataset consisting of pictures of animals, the $$x_i$$ might be images (consisting of height, width, and color channel) and the $$y_i$$ might be a string which states the type of animal. 
+
 ## Code presentation
 
 I will present code as follows:
