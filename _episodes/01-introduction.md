@@ -20,6 +20,8 @@ Here I can put any infomation about what the course will cover.
 
 Maybe include some images as well...
 
+![FCN diagram]({{ page.root }}/fig/FCNDiagram.png)
+
 ![Repository Links]({{ page.root }}/fig/repository-links.svg)
 
 ## Helpful tools
