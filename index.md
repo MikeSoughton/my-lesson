@@ -9,8 +9,9 @@ permalink: index.html  # Is the only page that doesn't follow the pattern /:path
 This is my lesson home page template.
 
 > ## Prerequisites
->
-> Use the `.prereq` style to specify prerequisites.
+> This assumes that 
+> 1. You have a basic understanding of the command line and bash
+> 2. A willingness to learn!
 {: .prereq}
 
 > ## Ten Things You Need To Know
